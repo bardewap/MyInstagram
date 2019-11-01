@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_pic"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@android:color/darker_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFeedUserName"
+                        android:layout_marginTop="21dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textSize="14dp"
+                        android:text="Pradeep Bardewa"/>
+
+                    <TextView
+                        android:id="@+id/tvFeedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:text="8 HOURS AGO"/>
+
+                </LinearLayout>
+
+
+                <!--<ImageButton-->
+                <!--android:layout_marginStart="@dimen/_220sdp"-->
+                <!--android:background="@android:color/transparent"-->
+                <!--android:tint="@android:color/darker_gray"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:src="@drawable/dots"/>-->
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/My_Post_Image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                android:src="@drawable/empty"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivLike"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/ic_heart"
+                    android:layout_marginStart="36dp"
+                    tools:ignore="RtlCompat" />
+
+                <!--android:src="@drawable/ic_insta_like"-->
+
+                <ImageView
+                    android:id="@+id/ivComment"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginStart="36dp"
+                    android:src="@drawable/ic_comment"
+                    tools:ignore="RtlCompat" />
+
+                <ImageView
+                    android:id="@+id/ivShare"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginStart="36dp"
+                    android:src="@drawable/send"
+                    tools:ignore="RtlCompat" />
+
+                <!--<ImageView-->
+                    <!--android:layout_width="30dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:layout_marginLeft="235dp"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:src="@drawable/ic_action_delete"/>-->
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:id="@+id/liker_pro_pic"-->
+                <!--android:layout_width="25dp"-->
+                <!--android:layout_height="25dp"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:src="@drawable/propic3"/>-->
+
+                <TextView
+                    android:id="@+id/tvFeedLikes"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_marginStart="36dp"
+                    android:textStyle="bold"
+                    android:text="Liked by"
+                    tools:ignore="RtlCompat" />
+
+
+
+                <TextView
+                    android:id="@+id/tvFeedComments"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:text="24 others"
+                    tools:ignore="RtlCompat" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/profile"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@android:color/darker_gray"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textSize="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="60dp"
+                android:text="Add a comment...."/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
