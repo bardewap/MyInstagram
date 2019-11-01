@@ -2,6 +2,7 @@ package com.example.myinstagram;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.volley.Request;
@@ -76,13 +77,15 @@ public class MainActivity extends AppCompatActivity
     private void loadData() {
 
         String Main_Url = "https://ifame.000webhostapp.com/get_video_info.php";
-        final String pictures = "ifame.000webhostapp.com/images/";
+
+
+        final String pictures = "https://ifame.000webhostapp.com/images/";
         final String videos = "https://ifame.000webhostapp.com/videos/";
+
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(true);
         progressDialog.setMessage("Loading Please Wait..");
         progressDialog.show();
-
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Main_Url, new Response.Listener<String>() {
             @Override
@@ -133,8 +136,27 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                startActivity(new Intent(context,SelectImageActivity.class));
+            }
+        });
+
+
+        MyProfileFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                MyProfileFragment.setImageResource(R.drawable.ic_my_profile_filled);
+
+            }
+        });
+
+
+        HomeFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                HomeFragment.setImageResource(R.drawable.ic_home_blank_filled);
             }
         });
 

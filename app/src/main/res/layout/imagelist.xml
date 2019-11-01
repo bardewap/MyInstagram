@@ -35,7 +35,7 @@
 
                     <TextView
                         android:id="@+id/tvFeedUserName"
-                        android:layout_marginTop="21dp"
+                        android:layout_marginTop="18dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/black"
@@ -52,15 +52,6 @@
 
                 </LinearLayout>
 
-
-                <!--<ImageButton-->
-                <!--android:layout_marginStart="@dimen/_220sdp"-->
-                <!--android:background="@android:color/transparent"-->
-                <!--android:tint="@android:color/darker_gray"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:layout_width="30dp"-->
-                <!--android:layout_height="30dp"-->
-                <!--android:src="@drawable/dots"/>-->
 
             </LinearLayout>
 
@@ -101,8 +92,6 @@
                     android:layout_marginStart="36dp"
                     tools:ignore="RtlCompat" />
 
-                <!--android:src="@drawable/ic_insta_like"-->
-
                 <ImageView
                     android:id="@+id/ivComment"
                     android:layout_width="30dp"
@@ -142,12 +131,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <!--<de.hdodenhof.circleimageview.CircleImageView-->
-                <!--android:id="@+id/liker_pro_pic"-->
-                <!--android:layout_width="25dp"-->
-                <!--android:layout_height="25dp"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:src="@drawable/propic3"/>-->
 
                 <TextView
                     android:id="@+id/tvFeedLikes"
