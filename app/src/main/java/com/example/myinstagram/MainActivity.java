@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         context = MainActivity.this;
-        //  getSupportActionBar().setTitle("Instagram");
-        // toolbar.setTitleTextColor(getResources().getColor(R.color.overlay_dark_90));
+//        getSupportActionBar().setTitle("\uD835\uDD74\uD835\uDD93\uD835\uDD98\uD835\uDD99\uD835\uDD86\uD835\uDD8C\uD835\uDD97\uD835\uDD86\uD835\uDD92");
+//        toolbar.setTitleTextColor(getResources().getColor(R.color.overlay_dark_90));
 
 
         init();
