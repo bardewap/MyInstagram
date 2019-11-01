@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.myinstagram"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -38,5 +38,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer:2.7.3'
     // Image loading
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.danikula:videocache:2.7.0'
+    implementation 'cn.jzvd:jiaozivideoplayer:6.0.2'
 
 }

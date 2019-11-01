@@ -53,6 +53,7 @@
                 </LinearLayout>
 
 
+
             </LinearLayout>
 
         </RelativeLayout>
@@ -71,12 +72,18 @@
                 android:visibility="gone"
                 android:src="@drawable/empty"/>
 
-            <ImageView
-                android:id="@+id/ivFeedVideo"
+            <!--<ImageView-->
+                <!--android:id="@+id/ivFeedVideo"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="300dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:visibility="gone" />-->
+
+            <cn.jzvd.JZVideoPlayerStandard
+                android:id="@+id/videoplayer"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:scaleType="centerCrop"
-                android:visibility="gone" />
+                android:layout_height="300dp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ivPlay"
