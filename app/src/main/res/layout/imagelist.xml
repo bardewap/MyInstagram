@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -114,7 +115,7 @@
                     android:id="@+id/ivLike"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="15dp"
                     android:src="@drawable/ic_heart"
                     android:layout_marginStart="36dp"
                     tools:ignore="RtlCompat,VectorDrawableCompat" />
@@ -123,8 +124,8 @@
                     android:id="@+id/ivComment"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="36dp"
-                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/ic_comment"
                     tools:ignore="RtlCompat,VectorDrawableCompat" />
 
@@ -132,8 +133,8 @@
                     android:id="@+id/ivShare"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="36dp"
-                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/send"
                     tools:ignore="RtlCompat" />
 
