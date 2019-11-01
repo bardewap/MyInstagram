@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity
         // toolbar.setTitleTextColor(getResources().getColor(R.color.overlay_dark_90));
 
 
-
-
         init();
         loadData();
 
@@ -76,8 +74,9 @@ public class MainActivity extends AppCompatActivity
 
     private void loadData() {
 
-        String Main_Url = "https://ifame.000webhostapp.com/get_video_info.php";
+       final  String Main_Url ="https://ifame.000webhostapp.com/get_video_info.php";
 
+        Log.d("loadDataddv", "loadData: " + Main_Url);
 
         final String pictures = "https://ifame.000webhostapp.com/images/";
         final String videos = "https://ifame.000webhostapp.com/videos/";
@@ -87,39 +86,42 @@ public class MainActivity extends AppCompatActivity
         progressDialog.setMessage("Loading Please Wait..");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, Main_Url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                progressDialog.dismiss();
+        StringRequest stringRequest= new StringRequest(Request.Method.GET, Main_Url, new Response.Listener<String>() {
 
-                Log.d("kadkad", "kadavdald" + response);
-
-                try {
-                    JSONArray jsonArray = new JSONArray(response);
+        @Override
+        public void onResponse (String response){
+            progressDialog.dismiss();
 
 
-                    myAdapter = new MyAdapter(jsonArray, context);
-                    recyclerView.setAdapter(myAdapter);
+            Log.d("gdkagd", "kadavdald" + response);
+
+            try {
+                JSONArray jsonArray = new JSONArray(response);
+
+                myAdapter = new MyAdapter(jsonArray, context);
+                recyclerView.setAdapter(myAdapter);
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
 
-            }
-        });
+        }
+    },new Response.ErrorListener()
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
+    {
+        @Override
+        public void onErrorResponse (VolleyError error){
+
+    }
+    });
+
+    RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         requestQueue.add(stringRequest);
 
 
-    }
+}
 
     private void init() {
 
@@ -137,7 +139,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(context,SelectImageActivity.class));
+                startActivity(new Intent(context, SelectImageActivity.class));
             }
         });
 

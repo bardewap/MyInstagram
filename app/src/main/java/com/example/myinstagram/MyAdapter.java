@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -31,22 +32,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.jsonArray = jsonArray;
         this.context = context;
 
-        Log.d("imagrurl", "MyAdapter: "+jsonArray);
+        Log.d("imagrurl", "MyAdapter: " + jsonArray);
     }
-
-
 
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater layoutInflater=LayoutInflater.from(parent.getContext());
-      View view=layoutInflater.inflate(R.layout.imagelist,parent,false);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.imagelist, parent, false);
 
-      MyViewHolder myViewHolder=new MyViewHolder(view);
+        MyViewHolder myViewHolder = new MyViewHolder(view);
 
-        Log.d("myViewHolder1", "onCreateViewHolder: "+myViewHolder);
+        Log.d("myViewHolder1", "onCreateViewHolder: " + myViewHolder);
 
 
         return myViewHolder;
@@ -55,92 +54,84 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        Log.d("myCount", "onBindViewHolder: "+position);
-
-//        for(int i=0;i<jsonArray.length();i++){
-//
-//
-//
-//            try {
-//                JSONObject jsonObject=jsonArray.getJSONObject(i);
-//
-//                String title=jsonObject.getString("title");
-//                String type=jsonObject.getString("type");
-//
-//                if(type.equalsIgnoreCase("image")){
-//
-//                    String imageUrl=pictures+title+".jpg";
-//
-//                    Log.d("imageUrss", "onBindViewHolder: "+imageUrl);
-//
-//                    Glide.with(holder.MyPost.getContext())
-//                            .load(imageUrl)
-//                            .fitCenter()
-//                            .into(holder.MyPost);
-//
-//
-//                }
-//
-//
-//
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-
+        Log.d("myCount", "onBindViewHolder: " + position);
 
 
         try {
-          //  Log.e("printkarkedikhao","fnanf"+jsonArray.getJSONObject(position).getString("type"));
-            JSONObject jsonObject=jsonArray.getJSONObject(position);
+            //  Log.e("printkarkedikhao","fnanf"+jsonArray.getJSONObject(position).getString("type"));
+            JSONObject jsonObject = jsonArray.getJSONObject(position);
 
 
-            String url1=null;
-            String url2=null;
+            String url1 = null;
+            String url2 = null;
 
             if (jsonArray.getJSONObject(position).getString("type").equalsIgnoreCase("image")) {
                 url1 = pictures + jsonArray.getJSONObject(position).getString("title") + ".jpg";
-                Log.d("dakdvakvd", "onBindViewHolder:" +url1);
+                Log.d("dakdvakvd", "onBindViewHolder:" + url1);
+                holder.MyPost.setVisibility(View.VISIBLE);
+                holder.myVideoPost.setVisibility(View.GONE);
+                holder.ivPlay.setVisibility(View.GONE);
 
-            }else{
-               //  url2 = videos +jsonArray.getJSONObject(position).getString("title")+ ".mp4";
-                Log.d("dakdvakvdqqqqq", "onBindViewHolder:" +url2);
+                Glide.with(holder.MyPost.getContext())
+                        .load(url1)
+                        .into(holder.MyPost);
+
+
+            } else {
+                //  url2 = videos +jsonArray.getJSONObject(position).getString("title")+ ".mp4";
+                Log.d("dakdvakvdqqqqq", "onBindViewHolder:" + url2);
+
+                holder.MyPost.setVisibility(View.GONE);
+                holder.myVideoPost.setVisibility(View.VISIBLE);
+                holder.ivPlay.setVisibility(View.VISIBLE);
+
+                Glide.with(context)
+                        .asBitmap()
+                        .load(url2)
+//                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.DATA)
+                        .into(holder.myVideoPost);
+
             }
 
 
-            Glide.with(holder.MyPost.getContext())
-                    .load(url1)
-                    .into(holder.MyPost);
-
-        //    Picasso.get().load("http://ifame.000webhostapp.com/images/play3.jpg").into(holder.MyPost);
+            //    Picasso.get().load("http://ifame.000webhostapp.com/images/play3.jpg").into(holder.MyPost);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
+        holder.myVideoPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
+
+            }
+        });
 
 
     }
 
     @Override
-    public int getItemCount()
-    {
-        Log.d("ladllda", "getItemCount: "+jsonArray.length());
+    public int getItemCount() {
+        Log.d("ladllda", "getItemCount: " + jsonArray.length());
         return jsonArray.length();
 
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        ImageView Profile_Pic,MyPost;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        ImageView Profile_Pic, MyPost, myVideoPost,ivPlay;
         TextView Username;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            Profile_Pic=(ImageView)itemView.findViewById(R.id.profile_pic);
-            MyPost=itemView.findViewById(R.id.My_Post_Image);
+            Profile_Pic = (ImageView) itemView.findViewById(R.id.profile_pic);
+            MyPost = itemView.findViewById(R.id.My_Post_Image);
+            myVideoPost = itemView.findViewById(R.id.ivFeedVideo);
+            ivPlay = itemView.findViewById(R.id.ivPlay);
+
+
 
         }
     }
