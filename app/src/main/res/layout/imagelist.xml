@@ -85,18 +85,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivPlay"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:indeterminate="true"
-                android:src="@drawable/ic_play_arrow_blue_24dp"
-                android:visibility="gone"
-                tools:ignore="VectorDrawableCompat" />
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:id="@+id/ivPlay"-->
+                <!--android:layout_width="180dp"-->
+                <!--android:layout_height="180dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:indeterminate="true"-->
+                <!--android:src="@drawable/ic_play_arrow_blue_24dp"-->
+                <!--android:visibility="gone"-->
+                <!--tools:ignore="VectorDrawableCompat" />-->
 
 
         </RelativeLayout>

@@ -78,7 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 holder.MyPost.setVisibility(View.VISIBLE);
               //  holder.myVideoPost.setVisibility(View.GONE);
                 holder.jzVideoPlayerStandard.setVisibility(View.GONE);
-                holder.ivPlay.setVisibility(View.GONE);
+              //  holder.ivPlay.setVisibility(View.GONE);
 
                 Glide.with(holder.MyPost.getContext())
                         .load(url1)
@@ -92,7 +92,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 holder.MyPost.setVisibility(View.GONE);
               //  holder.myVideoPost.setVisibility(View.VISIBLE);
                 holder.jzVideoPlayerStandard.setVisibility(View.VISIBLE);
-                holder.ivPlay.setVisibility(View.VISIBLE);
+              //  holder.ivPlay.setVisibility(View.VISIBLE);
 
 //                Glide.with(context)
 //                        .asBitmap()
@@ -105,7 +105,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 MyApplication myApplication= new MyApplication();
                 HttpProxyCacheServer proxy = myApplication.getProxy(context);
                 holder.jzVideoPlayerStandard.setUp(proxy.getProxyUrl(url2)
-                        , JZVideoPlayerStandard.SCREEN_LAYOUT_LIST, "demo");
+                        , JZVideoPlayerStandard.SCREEN_LAYOUT_LIST, "");
 
                 Glide.with(context).load(url2).apply(new RequestOptions().override(50,50)).into(holder.jzVideoPlayerStandard.thumbImageView);
 
@@ -149,7 +149,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             Profile_Pic = (ImageView) itemView.findViewById(R.id.profile_pic);
             MyPost = itemView.findViewById(R.id.My_Post_Image);
            // myVideoPost = itemView.findViewById(R.id.ivFeedVideo);
-            ivPlay = itemView.findViewById(R.id.ivPlay);
+           // ivPlay = itemView.findViewById(R.id.ivPlay);
 
             jzVideoPlayerStandard = (JZVideoPlayerStandard) itemView.findViewById(R.id.videoplayer);
 
